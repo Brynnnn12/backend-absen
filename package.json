@@ -1,0 +1,52 @@
+{
+  "name": "backend-absen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "cross-env NODE_ENV=test jest",
+    "test:watch": "cross-env NODE_ENV=test jest --watch",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage",
+    "lint": "eslint src/ tests/",
+    "lint:fix": "eslint src/ tests/ --fix",
+    "format": "prettier --write src/ tests/",
+    "format:check": "prettier --check src/ tests/",
+    "seed:admin": "node seeders/adminSeeder.js",
+    "seed:employees": "node seeders/employeeSeeder.js",
+    "seed:all": "node seeders/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0",
+    "express-async-handler": "^1.2.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.2",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.1",
+    "node-cron": "^4.2.0",
+    "nodemailer": "^7.0.5",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.30.1",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^30.0.4",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "supertest": "^7.1.3"
+  }
+}

@@ -1,0 +1,71 @@
+// eslint.config.js
+const js = require('@eslint/js');
+
+module.exports = [
+  js.configs.recommended,
+  {
+    languageOptions: {
+      ecmaVersion: 2021,
+      sourceType: 'commonjs',
+      globals: {
+        process: 'readonly',
+        console: 'readonly',
+        Buffer: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+        module: 'readonly',
+        require: 'readonly',
+        exports: 'readonly',
+        global: 'readonly'
+      }
+    },
+    rules: {
+      'no-console': 'warn',
+      'no-unused-vars': 'error',
+      'no-undef': 'error',
+      'prefer-const': 'error',
+      'no-var': 'error',
+      'comma-dangle': ['error', 'never'],
+      'quotes': ['error', 'single'],
+      'semi': ['error', 'always'],
+      'indent': ['error', 2],
+      'no-trailing-spaces': 'error',
+      'eol-last': 'error',
+      'keyword-spacing': 'error',
+      'space-before-blocks': 'error',
+      'space-infix-ops': 'error',
+      'comma-spacing': 'error',
+      'brace-style': 'error',
+      'curly': 'error',
+      'eqeqeq': 'error',
+      'no-multi-spaces': 'error',
+      'no-redeclare': 'error',
+      'no-return-assign': 'error',
+      'no-sequences': 'error',
+      'no-throw-literal': 'error',
+      'no-unused-expressions': 'error',
+      'no-useless-call': 'error',
+      'no-useless-concat': 'error',
+      'no-useless-return': 'error',
+      'radix': 'error'
+    }
+  },
+  {
+    files: ['tests/**/*.js', '**/*.test.js', '**/*.spec.js'],
+    languageOptions: {
+      globals: {
+        jest: 'readonly',
+        describe: 'readonly',
+        test: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly'
+      }
+    },
+    rules: {
+      'no-console': 'off'
+    }
+  }
+];
